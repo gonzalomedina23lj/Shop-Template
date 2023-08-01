@@ -1,0 +1,44 @@
+.toolbar{
+    width: 100%;
+    height: 80px;
+    background-color: var(--primary-color);
+    justify-content: space-between;
+    border-bottom: solid 3px var(--second-color);
+
+}
+
+.toolbar-icons button{
+    cursor: pointer;
+    margin-right: 15px;
+    position: relative;
+
+}
+
+.number-items{
+    font-weight: bold;
+    background-color: var(--warn-color);
+    position: absolute;
+    top: -25px;
+    left: 15px;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+}
+
+.buy-cart{
+    display: none;
+}
+
+.show-cart{
+    position: absolute;
+    right: 65px;
+    top: 60px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--second-color);
+    border-radius: 5%;
+    background-color: var(--accent-color);
+    
+}

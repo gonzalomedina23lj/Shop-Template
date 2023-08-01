@@ -1,1 +1,16 @@
-<p>header works!</p>
+<mat-toolbar class="toolbar container">
+    <h1>Store App</h1>
+    <span class="example-spacer"></span>
+  <div class="toolbar-icons">
+    <button mat-icon-button aria-label="icon-button with shopping icon" (click)="onToggleCart()">
+      <p class="number-items">0</p>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="icon-button with store icon">
+      <mat-icon>storefront</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div class="buy-cart" [ngClass]="{'show-cart':viewCart}">
+  <app-cart></app-cart>
+</div>

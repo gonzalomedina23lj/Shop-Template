@@ -6,17 +6,26 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { ProductComponent } from './components/product/product.component';
+import { CartComponent } from './components/cart/cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    ProductComponent
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
