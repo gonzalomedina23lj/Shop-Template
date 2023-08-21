@@ -1,6 +1,6 @@
 import { DB } from "../interfaces/database";
 
-export const database: DB = {
+export const DATABASE: DB = {
     products: [
         {
             id: '01',

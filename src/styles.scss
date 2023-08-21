@@ -51,6 +51,15 @@ body{
 
 }
 
+button{
+  width: 50px;
+  border-radius: 1px;
+  cursor: pointer;
+  margin: 0 15px 0 15px;
+  position: relative;
+
+}
+
 .container {
   overflow: hidden;
   display: flex;
