@@ -23,9 +23,8 @@ export class CartComponent {
   }
 
   decQuant(product: Product) {
-    if (product.quantity > 1) {
-      product.quantity--;}
-      
+    this.storeService.deleteProduct(product)
+
   }
 
 

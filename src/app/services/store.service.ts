@@ -31,11 +31,22 @@ export class StoreService {
     const findProduct = currentCart.find((element) => element.id === product.id);
     if (findProduct){
       findProduct.quantity += 1;
-    }else{
+    }
+    else{
       product.quantity = 1;
       currentCart.push(product);
     }
     this.myCartList.next(currentCart);
+  }
+
+  deleteProduct(product: Product){
+    const currentCart = this.myCartList.value;
+    const findProduct = currentCart.find((element) => element.id === product.id);
+    if (findProduct && findProduct.quantity > 0){
+      findProduct.quantity -= 1
+    }
+    this.myCartList.next(currentCart);
+
   }
 
   clearCart(){
