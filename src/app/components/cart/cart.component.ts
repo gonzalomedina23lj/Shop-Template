@@ -1,13 +1,32 @@
 import { Component } from '@angular/core';
-import { DATABASE } from "../../database/products-database";
+import { Product } from 'src/app/interfaces/product';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
 export class CartComponent {
 
-  products = DATABASE.products;
+  myCartList$ = this.storeService.myCartList$;
+
+  constructor(private storeService:StoreService) { }
+
+  deleteProducts(){
+    this.storeService.clearCart();
+  }
+
+  incQuant(product: Product){
+    this.storeService.pushProduct(product);
+  }
+
+  decQuant(product: Product) {
+    if (product.quantity > 1) {
+      product.quantity--;}
+      
+  }
+
 
 }

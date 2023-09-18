@@ -11,7 +11,7 @@
         <p class="product-price"><span>$&nbsp;</span>{{ product.price }}</p>
     </div>
     <div class="product-footer">
-        <button>
+        <button (click)="pushToCart(product)">
             <mat-icon>add_shopping_cart</mat-icon>
         </button>
     </div>

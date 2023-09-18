@@ -11,7 +11,7 @@ import { DATABASE } from "../../database/products-database";
 
 export class ProductComponent implements OnInit {
 
-  products!: Product[];
+  products: Product[] = [];
 
   constructor(private storeService: StoreService){}
 
@@ -23,6 +23,10 @@ export class ProductComponent implements OnInit {
     this.storeService.getAllProducts().subscribe((products) =>{
       this.products = products;
     });
+  }
+
+  pushToCart(product: Product){
+    return this.storeService.pushProduct(product);
   }
 
 

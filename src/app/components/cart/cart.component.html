@@ -1,21 +1,21 @@
 <div class="cart-container">
-    <div class="product-cart-status">
+    <div class="product-cart-status" *ngFor="let product of myCartList$ | async">
         <h3 class="product-title">
-            product.title
+            {{ product.title }}
         </h3>
-        <p class="product-price"><span>$&nbsp;</span>product.price</p>
+        <p class="product-price"><span>$&nbsp;</span>{{ product.price }}</p>
         <div class="amount-buttons">
-            <button>
+            <button (click)="incQuant(product)">
                 <mat-icon>add</mat-icon>
             </button>
-            <span class="amount">amount</span>
-            <button>
+            <span class="quantity">{{ product.quantity }}</span>
+            <button (click)="decQuant(product)">
                 <mat-icon>remove</mat-icon>
             </button>
         </div>
     </div>
     <div class="clear-cart-button">
-        <button>
+        <button (click)="deleteProducts()">
             <mat-icon>delete</mat-icon>
         </button>
     </div>   
